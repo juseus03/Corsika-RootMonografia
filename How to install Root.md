@@ -4,23 +4,24 @@ This file explains how to install ROOT (data analys framework from CERN) in Ubun
 A good installation guide is at: https://root.cern.ch/building-root and the README file in the source.
 
 1. Install CMake:
-```
+    ```
     sudo apt-get install cmake
-```
+    ```
 2. Get the source file at: 
     * https://root.cern.ch/downloading-root
     * the file is named as: root_`<version>`_source.tar.gz
 3. Extract the source file.
+
 4. Make a new directory for installation, ROOT source directory doesn't work.
     ```
     mkdir <builddir>
     cd <builddir>
     ```
 5. Execute the following commands:
-```
+    ```
     cmake ../root
     cmake --build .
-```  
+    ```  
   For version 6.06.08 of root it appears the error:
    * *Found GCC compiler with new ABI.  Cling does not support the GCC 5 ABI yet"*
    
@@ -40,17 +41,17 @@ A good installation guide is at: https://root.cern.ch/building-root and the READ
   sudo update-alternatives --set c++ /usr/bin/g++
   sudo update-alternatives --config gcc (choose option 4.8)
   sudo update-alternatives --config g++ (choose option 4.8)
-```
+  ```
   If you execute this commands, both answers must be 4.8
     ```
     gcc --version
     g++ --version
     ```
 6. Now you can re execute:
-```
+    ```
     cmake ../root
     cmake --build .
-```
+    ```
 7. Once cmake has finished (it takes a while) Add bin/ to PATH and lib/ to LD_LIBRARY_PATH. 
     * For the sh shell :
         ```
